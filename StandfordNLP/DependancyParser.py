@@ -1,10 +1,15 @@
 from nltk.parse import CoreNLPParser
 from nltk.parse.corenlp import CoreNLPDependencyParser
 import networkx as nx
+import matplotlib.pyplot as plt
 dep_parser = CoreNLPDependencyParser(url='http://localhost:9000')
 
 
-parse, = dep_parser.raw_parse('The quick brown fox jumps over the lazy dog.')
+#parse, = dep_parser.raw_parse('The quick brown fox jumps over the lazy dog.')
+#G = nx.DiGraph()
+#G = parse.nx_graph()
+#nx.draw(G)
+#plt.show()
 
 senten = """The main banquet hall at Shangri-La, was jam-packed with over a thousand
      invitee guests- ranging from the first citizen of the country himself, the Speaker,
@@ -30,3 +35,11 @@ check_parser, = dep_parser.raw_parse("""The main banquet hall at Shangri-La, was
 for predicate, subject, objects in tom_sen1.triples():
     print(predicate)
 
+# =============================================================================
+# import subprocess
+# myinput = open('Source.txt')
+# myoutput = open('outs.txt', 'w')
+# p = subprocess.Popen('A:\FinalYearProject\PythonNLP\senna-v3.0\senna-v3.0\senna\senna-win32.exe', stdin=myinput, stdout=myoutput)
+# p.wait()
+# myoutput.flush()
+# =============================================================================
